@@ -1,0 +1,84 @@
+---
+title: "Untitled"
+author: "Giovanni"
+date: "2024-05-14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(ggplot2)
+library(patchwork)
+library(reshape2)
+library(ggtranscript)
+library(rtracklayer)
+library(patchwork)
+library(RColorBrewer)
+library(data.table)
+```
+
+
+# Plot densities
+
+```{r, fig.height=12, fig.width=10}
+
+setwd('/Users/giovanni/hoffman_folder/projects/MLLT3_longread_project/') # change
+
+gene.lst <- c( "GATA1" )
+DATASET <- '12'
+
+for (gene in gene.lst){
+  
+    cov.file <- paste('data/plots/densities.', DATASET, "_", gene, ".sashimi", sep = "") #sashimi file
+    gtf.file <- paste('data/plots/densities.', DATASET, "_", gene, ".", gene, ".gtf", sep = "") #gtf file
+    
+    quant <- fread(cov.file, sep = '\t', header = F)
+    names(quant) <- c('idx', 'lab', 'pos', 'DP')
+       
+    
+    my.gtf  <- as.data.frame(import(gtf.file))
+    my.gtf  <- my.gtf %>% dplyr::filter(gene_name == gene) 
+    my.exon <- my.gtf %>% dplyr::filter(type == "exon") 
+    my.CDS  <- my.gtf %>% dplyr::filter(type == "CDS") 
+    my.introns <- to_intron(my.exon, "transcript_id") 
+    max.end   <- max(my.gtf$end)
+    min.start <- min(my.gtf$start)
+    
+        
+    g1 <- ggplot(quant, aes(y = DP, x = pos))+
+    		geom_line(aes(color = lab)) +
+    		labs(x = NULL, y = "Coverage")+
+    		facet_grid(lab~., scales = 'free')+
+        coord_cartesian(xlim = c(min.start, max.end))+
+    		theme_classic() +
+        theme(strip.text.y = element_text(angle = 0),
+              legend.position = "none")
+    
+    g2 <- ggplot(my.exon, aes( xstart = start , xend = end, y = transcript_id)) +
+    	geom_intron(data = my.introns, aes(strand = strand), arrow.min.intron.length = 50000, size = 0.3)+
+    	geom_range( data = my.exon, height = 0.25) +
+    	geom_range( data = my.CDS, height = 0.5) +
+    	facet_wrap(gene_name ~., scales = 'free', ncol = 1)+
+    	labs(x = "Position", y = "Transcript id") + 
+    	theme_bw() + 
+      coord_cartesian(xlim = c(min.start, max.end))+
+    	theme(legend.position="none")
+    
+ 
+    patched_plot <- (g1 /g2) + plot_layout(heights = c(0.9, 0.1))
+    
+    plot.file <- paste('data/plots/densities.', DATASET, "_", gene,  ".density_plot.pdf", sep = "") 
+    pdf(plot.file, width = 10, height = 12)
+    print(patched_plot)
+    dev.off()
+    
+    
+    print(gene)
+}
+
+print(g1)
+print(g2)
+
+```
+
