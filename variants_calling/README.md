@@ -62,7 +62,7 @@ The STAR index, GTF file and output directory are hardcoded in the script. Pleas
 new samples.
 
 ## Variants calling at single cell level
-You can access the detailed discription and associated scripts here
+You can access the detailed description and associated scripts [here](https://github.com/mikkolalab/MLDS-evolution/tree/main/variants_calling/Variants_calling_at_single_cell_level).
 
 ## Subset bam file by cell clusters 
 
