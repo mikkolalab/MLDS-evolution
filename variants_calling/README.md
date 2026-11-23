@@ -62,7 +62,7 @@ The STAR index, GTF file and output directory are hardcoded in the script. Pleas
 new samples.
 
 ## Variants calling at single cell level
-Somatic mutations were tracked directly in 10x Genomics 5’ single-cell RNA-sequencing and single cell ONT long read sequencing data using a custom UMI-aware Python pipeline. Candidate variants identified by orthogonal targeted DNA sequencing were genotyped in individual cells using pileup-based interrogation of aligned BAM files using pysam. Read-level allele calls were collapsed to unique molecular identifiers (UMIs) to suppress PCR duplicates and sequencing errors, and mutation support was quantified for each cell as the fraction of ALT-supporting UMIs among all informative UMIs covering the locus. To improve recovery of large GATA1 insertions and deletions that were incompletely represented in standard Cell Ranger alignments, selected datasets were additionally processed using two-pass STAR (v2.7.10a) alignment followed by local realignment with abra2 (v2.23) prior to genotyping. Mutation calls were integrated with transcriptional profiles through shared cell barcodes and used to identify mutation-positive cells and track leukemic clones across disease stages.You can access the scripts here
+You can access the detailed discription and associated scripts here
 
 ## Subset bam file by cell clusters 
 
