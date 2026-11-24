@@ -3,4 +3,4 @@ Seurat objects were created using Seurat v.5.3.0. Cells with fewer than 500 or m
 ### Scripts for the dotplots
 There are many dotplots in the manuscript to define cell identities and disease evolution. To make it easier to reproduce it, the R script containing the gene lists and codes to make the dotplots can be accessed [here](https://github.com/mikkolalab/MLDS-evolution/blob/main/single_cell_analysis/Gene_signatures_and_dotplot.R).
 ### Integrate mutation information and illustration
-The script for integrating mutation information with the Seurat object, processing variant read-support data, and generating UMAP plots to visualize the distribution of mutant cells can be accessed here.
+The script for integrating mutation information with the Seurat object, processing variant read-support data, and generating UMAP plots to visualize the distribution of mutant cells can be accessed [here](https://github.com/mikkolalab/MLDS-evolution/blob/main/single_cell_analysis/Integrate_mutation_data_and_visualize_mutant_cells.R).
