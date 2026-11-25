@@ -45,6 +45,9 @@ because there are two lines, the script will run two jobs (N=2).
 The STAR index, GTF file and output directory are hardcoded in the script. Please change to run
 new samples.
 
+To improve recovery of large GATA1 insertions and deletions that were incompletely represented in standard Cell Ranger alignments, selected datasets were additionally processed using two-pass STAR (v2.7.10a) alignment followed by local realignment with abra2 (v2.23) prior to genotyping. 
+
+refer to 
 
 *input: fastq file*
 
