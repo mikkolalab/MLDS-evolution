@@ -22,7 +22,7 @@ Keep in mind, if using a different protocol, change --bc-pattern=CCCCCCCCCCCCCCC
 ## Alignment 
 *Run time:* 2-3 hours to run
 
-refer to remap.two_pass_start.sh
+refer to remap_star_single_cell.sh
 
 The script runs the STAR aligner in two passes to improve the aligmnet of split reads. 
 In the first pass, it skips novel junctions longer than 100 kb. It also applies more stringent 
