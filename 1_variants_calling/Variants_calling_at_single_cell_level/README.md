@@ -37,7 +37,7 @@ The script calculates the allelic counts for each variant in the provided BAM fi
 *output: a mutation/variant table*
 
 ```
-python run_pysam_varcall.umi_bc.copy.py -m example_metadata.tsv -v variants.tsv -o variants.table.out
+python run_pysam_varcall.umi_bc.py -m example_metadata.tsv -v variants.tsv -o variants.table.out
 ```
 
 
