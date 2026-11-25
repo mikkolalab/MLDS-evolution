@@ -19,7 +19,7 @@ FQT=${PARMS[1]}
 
 # change for every dataset. `L008` may be different
 SM=$(basename $FQT "_L008_R2_001.fastq.gz")
-PREFIX=data/shortread_10X_5UTR_singlecell_fetaliver/bam/$SM
+PREFIX=data/shortread_10X_5UTR_singlecell/bam/$SM
 
 
 . /u/local/Modules/default/init/modules.sh
