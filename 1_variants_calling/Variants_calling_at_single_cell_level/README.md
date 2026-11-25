@@ -55,11 +55,8 @@ NOTE: The bam files must contain the UMI and BC in the read names (using umi_too
 The variants file should contain the following columns:
 ```
 gene	transcript	    mut         strand	REF	ALT	chrom	pos
-SRSF2   NM_003016.4     c.284C>G        -       G       C       chr17   76736877
-TET2	NM_001127208.2	c.3909C>G	+       C       G       chr4    105259724
-TET2	NM_001127208.2	c.2599T>C	+       T       C       chr4    105236541
-TET2	NM_001127208.2	c.5167C>T	+       C       T       chr4    105275677
-CBL     NM_005188.3     c.1112A>C       +       A       C       chr11   119278182
+GATA1.    X.         P199_GATA1_-/C      +      T       TC      chrX  48791153
+
 ```
 You can use the website: https://genebe.net/tools/hgvs to convert from HGVS to genomic coordinates.
 e.g. NM_003016.4:c.284C>G converts to chr17:76736877 G>C
