@@ -54,6 +54,8 @@ new samples.
 ## Variant calling by bc 
 *Run time:* a few minutes
 
+refer to 1_Variants_calling_at_single_cell_level/run_pysam_varcall_umi_bc.py
+
 The script calculates the allelic counts for each variant in the provided BAM files, at the single-cell level. It can handle both short read (sr) and long read (lr) sequencing data.
 
 *input: a lis of bam files and a variants file*
