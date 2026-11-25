@@ -2,9 +2,9 @@
 
 
 
-FQO=MLDS00272Pd0_S13_L006_R1_001.fastq.downsapled.gz
+FQO=MLDS_diagnosis_S1_L006_R1_001.fastq.downsapled.gz
 
-FQT=MLDS00272Pd0_S13_L006_R2_001.fastq.downsapled.gz
+FQT=MLDS_diagnosis_S1_L006_R2_001.fastq.downsapled.gz
 
 
 
@@ -115,7 +115,7 @@ STAR \
 
         --outSAMtype BAM SortedByCoordinate \
 
-        --outFileNamePrefix data_shortread/bam/MLDS00370PTAMPB 
+        --outFileNamePrefix data_shortread/bam/MLDSdiagnosis 
 
 `
 
