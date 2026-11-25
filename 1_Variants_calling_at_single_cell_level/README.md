@@ -22,7 +22,29 @@ Keep in mind, if using a different protocol, change --bc-pattern=CCCCCCCCCCCCCCC
 ## Alignment 
 *Run time:* 2-3 hours to run
 
-You can use the same command as bulk alignment. 
+refer to remap.two_pass_start.sh
+
+The script runs the STAR aligner in two passes to improve the aligmnet of split reads. 
+In the first pass, it skips novel junctions longer than 100 kb. It also applies more stringent 
+parameters for the alignment such as the overhang length and the number of mismatches.
+
+Usage:
+```
+qsub -t 1-N remap.two_pass_start.sh
+```
+
+This script is designed to run in the Hoffman2 cluster (or other SGE clusters). 
+It reads the input from a file called fastq.job:
+
+```
+sample1.R1.fastq.gz sample1.R2.fastq.gz sample1
+sample2.R1.fastq.gz sample2.R2.fastq.gz sample2
+```
+
+because there are two lines, the script will run two jobs (N=2).
+The STAR index, GTF file and output directory are hardcoded in the script. Please change to run
+new samples.
+
 
 *input: fastq file*
 
