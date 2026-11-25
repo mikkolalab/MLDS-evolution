@@ -22,7 +22,7 @@ The bed file should contain the regions of interest, with the following columns:
 
 ```
 chrom	start	       end	       name	       score	strand
-chrX	48791090	48791329  Exon2_splicing	-1	+
+chrX	48791090   48791329   Exon2_splicing	 -1	  +
 ```
 
 The `name` column is used to identify the region in the output file.
