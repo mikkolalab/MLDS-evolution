@@ -56,7 +56,6 @@ The variants file should contain the following columns:
 ```
 gene	transcript	    mut         strand	REF	ALT	chrom	pos
 GATA1.    X.         P199_GATA1_-/C      +      T       TC      chrX  48791153
-
 ```
 You can use the website: https://genebe.net/tools/hgvs to convert from HGVS to genomic coordinates.
 e.g. NM_003016.4:c.284C>G converts to chr17:76736877 G>C
