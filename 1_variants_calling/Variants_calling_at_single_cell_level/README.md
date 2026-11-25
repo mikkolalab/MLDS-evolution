@@ -82,7 +82,7 @@ The entries are the allelic ratio or coverage for each variant
 ## Integrating into Seurat object
 *Run time:*  a few minutes
 
-refer to the jupyter notebook merge_mecom_samples.ipynb 
+refer to Integrate_mutation_data_and_visualize_mutant_cells.R 
 
 *input: a mutation/variant table, seurat object*
 
