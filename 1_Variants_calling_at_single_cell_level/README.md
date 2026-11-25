@@ -22,7 +22,7 @@ Keep in mind, if using a different protocol, change --bc-pattern=CCCCCCCCCCCCCCC
 ## Alignment 
 *Run time:* 2-3 hours to run
 
-refer to remap_two_pass_start.sh
+refer to remap_star.single_cell.sh
 
 The script runs the STAR aligner in two passes to improve the aligmnet of split reads. 
 In the first pass, it skips novel junctions longer than 100 kb. It also applies more stringent 
@@ -30,15 +30,16 @@ parameters for the alignment such as the overhang length and the number of misma
 
 Usage:
 ```
-qsub -t 1-N remap.two_pass_start.sh
+qsub -t 1-N remap_star.single_cell.sh
 ```
 
 This script is designed to run in the Hoffman2 cluster (or other SGE clusters). 
 It reads the input from a file called fastq.job:
 
 ```
-sample1.R1.fastq.gz sample1.R2.fastq.gz sample1
-sample2.R1.fastq.gz sample2.R2.fastq.gz sample2
+sample1.R1.fastq.gz.extracted.fastq.gz  sample1.R2.fastq.gz.extracted.fastq.gz sample1
+sample2.R1.fastq.gz.extracted.fastq.gz  sample2.R2.fastq.gz.extracted.fastq.gz sample2
+
 ```
 
 because there are two lines, the script will run two jobs (N=2).
