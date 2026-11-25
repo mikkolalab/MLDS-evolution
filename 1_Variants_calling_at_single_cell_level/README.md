@@ -8,7 +8,7 @@
 
 ## Umi extraction
 *Run time:* 3-12 hours to run
-
+refer to umi_tools.extract_and_whitelist.sh
 It takes many hours to run 
 It takes as input a file called fastq.job that contains fastq paths for R1. 
 Keep in mind, if using a different protocol, change --bc-pattern=CCCCCCCCCCCCCCCCNNNNNNNNNNNN C = barcode ; N = UMI
