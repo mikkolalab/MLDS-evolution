@@ -87,12 +87,3 @@ refer to Integrate_mutation_data_and_visualize_mutant_cells.R
 *input: a mutation/variant table, seurat object*
 
 *output: a seurat object with mutations integrated*
-
-## Denovo mutation calling
-*Run time:*  a few minutes
-
-*input: a bam file sorted and indexed*
-
-*output: a vcf file*
-
-script: denovo_variantcall_bcftools.sh
